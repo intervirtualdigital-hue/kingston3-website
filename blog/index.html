@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights | Kingston 3 Consulting</title>
+  <meta name="description" content="Editorial insights on media strategy, narrative architecture, literary publishing, and advocacy from Fabian Lyon — 17-year Miami Herald veteran and founder of Kingston 3 Consulting." />
+  <link rel="canonical" href="https://www.kingston3consulting.com/blog/" />
+  <meta property="og:title" content="Insights | Kingston 3 Consulting" />
+  <meta property="og:description" content="Editorial insights on media strategy, narrative architecture, literary publishing, and advocacy from Fabian Lyon." />
+  <meta property="og:image" content="https://static.wixstatic.com/media/cf261f_da6e490c3c924e9f843aa227fc3aa156~mv2.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { background: var(--ink); padding: 12rem var(--gutter) 7rem; position: relative; overflow: hidden; }
+    .blog-hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .blog-hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.1; filter: grayscale(100%); }
+    .blog-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--ink) 30%, rgba(7,7,15,0.7) 100%); }
+    .blog-hero__inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; }
+
+    .blog-main { padding: var(--section-v) 0; }
+    .blog-layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-2xl); align-items: start; }
+
+    /* Featured post */
+    .blog-featured { margin-bottom: var(--space-2xl); }
+    .blog-featured__card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border-lt);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--trans);
+    }
+    .blog-featured__card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .blog-featured__img { aspect-ratio: 4/3; overflow: hidden; }
+    .blog-featured__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .blog-featured__card:hover .blog-featured__img img { transform: scale(1.04); }
+    .blog-featured__body { padding: var(--space-xl); display: flex; flex-direction: column; justify-content: center; background: var(--surface); }
+    .blog-featured__badge { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); background: rgba(196,151,74,0.1); padding: 0.35rem 0.85rem; border-radius: 2rem; display: inline-block; margin-bottom: 1rem; }
+    .blog-featured__title { font-family: var(--ff-display); font-size: var(--text-3xl); font-weight: 600; color: var(--ink); line-height: 1.15; margin-bottom: 1rem; transition: color var(--trans); }
+    .blog-featured__card:hover .blog-featured__title { color: var(--gold-dk); }
+    .blog-featured__excerpt { font-size: var(--text-sm); color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+    .blog-featured__meta { display: flex; align-items: center; gap: 1rem; font-size: var(--text-xs); color: var(--muted); }
+    .blog-featured__author { font-weight: 600; color: var(--ink); }
+
+    /* Post grid */
+    .post-section-label { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); padding-bottom: 1rem; border-bottom: 1px solid var(--border-lt); margin-bottom: var(--space-lg); }
+    .blog-posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+
+    /* Sidebar */
+    .blog-sidebar { position: sticky; top: 8rem; display: flex; flex-direction: column; gap: var(--space-lg); }
+    .sidebar-widget { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--radius-lg); padding: var(--space-lg); }
+    .sidebar-widget h4 { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-lt); }
+    .sidebar-author { text-align: center; }
+    .sidebar-author__img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; border: 3px solid var(--gold); }
+    .sidebar-author__name { font-family: var(--ff-display); font-size: var(--text-xl); font-weight: 600; color: var(--ink); }
+    .sidebar-author__bio { font-size: var(--text-sm); color: var(--muted); line-height: 1.65; margin-top: 0.5rem; }
+    .topics-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .topic-link { display: flex; justify-content: space-between; align-items: center; font-size: var(--text-sm); color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--border-lt); transition: color var(--trans); text-decoration: none; }
+    .topic-link:last-child { border-bottom: none; }
+    .topic-link:hover { color: var(--gold); }
+    .topic-count { font-size: var(--text-xs); font-weight: 600; background: var(--ivory); padding: 0.2rem 0.6rem; border-radius: 1rem; color: var(--muted); }
+
+    @media (max-width: 1024px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { position: static; } .blog-featured__card { grid-template-columns: 1fr; } .blog-featured__img { aspect-ratio: 16/9; } }
+    @media (max-width: 768px) { .blog-posts-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><img src="../assets/logo.png" alt="Kingston 3 Consulting" width="140" height="40" /></a>
+    <ul class="nav__links">
+      <li><a href="/about.html">About</a></li>
+      <li class="nav__dropdown"><a href="/services.html">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/media-strategy.html">Media Strategy</a>
+          <a href="/services/literary-representation.html">Literary Representation</a>
+          <a href="/services/advocacy.html">Advocacy</a>
+        </div>
+      </li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/" class="active">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/contact.html" class="btn btn--gold nav__cta">Work With Me</a>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile">
+    <ul>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__mobile__footer"><a href="/contact.html" class="btn btn--gold">Work With Me</a></div>
+  </nav>
+</nav>
+<a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="float-cta btn btn--gold">Book a Call →</a>
+
+<!-- HERO -->
+<header class="blog-hero">
+  <div class="blog-hero__bg">
+    <img src="https://static.wixstatic.com/media/cf261f_da6e490c3c924e9f843aa227fc3aa156~mv2.jpeg" alt="Newsroom" loading="eager" />
+  </div>
+  <div class="blog-hero__overlay"></div>
+  <div class="blog-hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Insights</span>
+    </nav>
+    <p class="eyebrow eyebrow--gold" style="margin-top:1rem;">The Kingston 3 Journal</p>
+    <h1 class="page-hero__title" style="margin-top:1rem;">Insights on narrative,<br /><em>media, and influence.</em></h1>
+    <p class="page-hero__sub">Practical perspectives on media strategy, publishing, advocacy, and the art of building influence — from 17 years inside America's newsrooms.</p>
+  </div>
+</header>
+
+<!-- BLOG MAIN -->
+<main class="blog-main">
+  <div class="container">
+    <div class="blog-layout">
+      <div>
+        <!-- FEATURED POST -->
+        <div class="blog-featured">
+          <p class="post-section-label">Featured Article</p>
+          <a href="/blog/why-your-story.html" class="blog-featured__card">
+            <div class="blog-featured__img">
+              <img src="https://static.wixstatic.com/media/cf261f_833c377c34d447b79ec21eec3e6ae564~mv2.jpeg" alt="Why Your Story Is Not Reaching The People Who Need to Hear It" loading="lazy" />
+            </div>
+            <div class="blog-featured__body">
+              <span class="blog-featured__badge">Media Strategy</span>
+              <h2 class="blog-featured__title">Why Your Story Is Not Reaching the People Who Need to Hear It</h2>
+              <p class="blog-featured__excerpt">You have done the work. You have the credentials, the track record, the results. So why does your story keep getting lost? The answer is almost never about the quality of what you have done — it is about the architecture of how you are telling it.</p>
+              <div class="blog-featured__meta">
+                <span class="blog-featured__author">Fabian Lyon</span>
+                <span>·</span>
+                <time datetime="2026-05-15">May 15, 2026</time>
+                <span>·</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- MORE POSTS -->
+        <p class="post-section-label">All Articles</p>
+        <div class="blog-posts-grid">
+          <a href="/blog/signing-a-deal.html" class="blog-card reveal">
+            <div class="blog-card__img">
+              <img src="https://static.wixstatic.com/media/cf261f_9d20dd4eff5e4f7ea19f8b61e5994644~mv2.jpeg" alt="What No One Tells You About Signing a Book Deal" loading="lazy" />
+            </div>
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">Literary</span>
+              <span class="blog-card__date">April 28, 2026</span>
+            </div>
+            <h3 class="blog-card__title">What No One Tells You About Signing a Book Deal</h3>
+            <p class="blog-card__excerpt">The advance number is only one part of the story. What you negotiate before, during, and after signing shapes the entire trajectory of your publishing career — and most first-time authors have no idea what to watch for.</p>
+          </a>
+
+          <a href="/blog/media-coverage.html" class="blog-card reveal">
+            <div class="blog-card__img">
+              <img src="https://static.wixstatic.com/media/cf261f_34273d8133a5440bac199c5ea3ad537f~mv2.jpeg" alt="The Real Reason You Can't Get Media Coverage" loading="lazy" />
+            </div>
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">Media Strategy</span>
+              <span class="blog-card__date">April 10, 2026</span>
+            </div>
+            <h3 class="blog-card__title">The Real Reason You Can't Get Media Coverage (And It's Not What You Think)</h3>
+            <p class="blog-card__excerpt">Most people blame journalists for not caring about their story. After 17 years on the other side of that relationship, I can tell you: the problem almost never starts with the journalist. It starts with the pitch — and the thinking behind it.</p>
+          </a>
+          <a href="/blog/why-your-story.html" class="blog-card reveal">
+            <div class="blog-card__img">
+              <img src="https://static.wixstatic.com/media/cf261f_833c377c34d447b79ec21eec3e6ae564~mv2.jpeg" alt="Why Your Story Is Being Told Without You" loading="lazy" />
+            </div>
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">Narrative Strategy</span>
+              <span class="blog-card__date">May 2026</span>
+            </div>
+            <h3 class="blog-card__title">Why Your Story Is Being Told Without You</h3>
+            <p class="blog-card__excerpt">There is a version of you that exists in boardrooms and industry circles, built without your input. Here's what that costs you — and how to take it back.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-widget sidebar-author">
+          <img src="https://static.wixstatic.com/media/cf261f_97379fa39e0d4213a8b9d5fc906e5f5c~mv2.jpeg" alt="Fabian Lyon" class="sidebar-author__img" loading="lazy" />
+          <p class="sidebar-author__name">Fabian Lyon</p>
+          <p class="sidebar-author__bio">Founder of Kingston 3 Consulting. 17-year Miami Herald veteran. Media strategist, narrative architect, and advocate for stories that deserve to be heard.</p>
+          <a href="/about.html" class="btn-arrow" style="margin-top:1rem;justify-content:center;">Full Bio →</a>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>Browse by Topic</h4>
+          <div class="topics-list">
+            <a href="#" class="topic-link">Media Strategy <span class="topic-count">2</span></a>
+            <a href="#" class="topic-link">Literary Publishing <span class="topic-count">1</span></a>
+            <a href="#" class="topic-link">Advocacy <span class="topic-count">0</span></a>
+            <a href="#" class="topic-link">Narrative Architecture <span class="topic-count">1</span></a>
+          </div>
+        </div>
+
+        <div class="sidebar-widget" style="background:var(--ink);border-color:var(--border-dk);text-align:center;">
+          <p class="eyebrow eyebrow--white" style="margin-bottom:0.75rem;">Work With Fabian</p>
+          <h4 style="color:var(--cream);font-family:var(--ff-display);font-size:var(--text-xl);">Ready to build your narrative strategy?</h4>
+          <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.5);margin:0.75rem 0 1.25rem;line-height:1.6;">Book a complimentary discovery call and let's talk about your goals.</p>
+          <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--full">Book a Call →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner__bg-text" aria-hidden="true">Insights</div>
+  <div class="cta-banner__inner">
+    <p class="eyebrow eyebrow--gold cta-banner__eyebrow">Go Deeper</p>
+    <h2 class="cta-banner__headline">Reading isn't enough.<br /><em>Let's build your strategy.</em></h2>
+    <p class="cta-banner__sub">These insights are the surface. The real work happens in a one-on-one engagement with Fabian Lyon. Book a discovery call to start.</p>
+    <div class="cta-banner__actions">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Call →</a>
+      <a href="/services.html" class="btn btn--outline-white">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <img src="../assets/logo.png" alt="Kingston 3 Consulting" width="120" height="34" />
+        <p>Boutique narrative strategy and media consulting. Miami, FL.</p>
+        <span class="footer__tagline">Narrative Architect · Influence Engineer</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigate</h4><ul>
+        <li><a href="/about.html">About Fabian</a></li><li><a href="/services.html">Services</a></li>
+        <li><a href="/process.html">Process</a></li><li><a href="/blog/">Insights</a></li><li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Services</h4><ul>
+        <li><a href="/services/media-strategy.html">Media Strategy</a></li>
+        <li><a href="/services/literary-representation.html">Literary Representation</a></li>
+        <li><a href="/services/advocacy.html">Advocacy</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Connect</h4><ul>
+        <li><a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Kingston 3 Consulting. All rights reserved.</p>
+      <p>Built by <a href="https://www.intervirtual.agency" target="_blank" rel="noopener">Intervirtual</a></p>
+    </div>
+  </div>
+</footer>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a21b55c9372a70f7d875c90"></script>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

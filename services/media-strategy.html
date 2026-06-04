@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Strategy & Narrative Consulting | Kingston 3 Consulting</title>
+  <meta name="description" content="Control your public narrative with insider media strategy from a 17-year Miami Herald journalist. Brand positioning, press placement, crisis communications, and editorial ghostwriting." />
+  <link rel="canonical" href="https://www.kingston3consulting.com/services/media-strategy.html" />
+  <meta property="og:title" content="Media Strategy & Narrative Consulting | Kingston 3 Consulting" />
+  <meta property="og:description" content="Control your public narrative with insider media strategy from a 17-year Miami Herald journalist. Brand positioning, press placement, crisis communications, and editorial ghostwriting." />
+  <meta property="og:image" content="https://static.wixstatic.com/media/cf261f_da6e490c3c924e9f843aa227fc3aa156~mv2.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .svc-hero { background: var(--ink); padding: 12rem var(--gutter) 7rem; position: relative; overflow: hidden; }
+    .svc-hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .svc-hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(60%); }
+    .svc-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--ink) 45%, rgba(7,7,15,0.5) 100%); }
+    .svc-hero__inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; }
+
+    .svc-intro { padding: var(--section-v) 0; }
+    .svc-intro__inner { display: grid; grid-template-columns: 3fr 2fr; gap: var(--space-2xl); align-items: start; }
+    .svc-intro__sticky { position: sticky; top: 8rem; }
+    .contact-sidebar {
+      background: var(--surface);
+      border: 1px solid var(--border-lt);
+      border-radius: var(--radius-xl);
+      padding: var(--space-lg);
+    }
+    .contact-sidebar h4 { font-family: var(--ff-display); font-size: var(--text-xl); font-weight: 600; margin-bottom: 0.75rem; }
+    .contact-sidebar p { font-size: var(--text-sm); color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+    .sidebar-creds { display: flex; flex-direction: column; gap: 0.6rem; margin: 1.25rem 0; }
+    .sidebar-cred { display: flex; align-items: center; gap: 0.6rem; font-size: var(--text-xs); color: var(--muted); }
+    .sidebar-cred::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+    .what-includes { padding: var(--section-v) 0; background: var(--surface); }
+    .includes-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+
+    .svc-quote-strip { background: var(--ink); padding: var(--section-v) 0; }
+    .svc-quote { max-width: 820px; margin: 0 auto; text-align: center; }
+    .svc-quote__text {
+      font-family: var(--ff-display);
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+    .svc-quote__attr { font-size: var(--text-sm); color: var(--muted); }
+    .svc-quote__attr strong { color: var(--gold); }
+
+    .faq-section { padding: var(--section-v) 0; }
+    .faq-list { margin-top: var(--space-xl); display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-lt); }
+    .faq-item { border-bottom: 1px solid var(--border-lt); }
+    .faq-q {
+      font-family: var(--ff-display);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      padding: 1.5rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-q::after { content: '+'; color: var(--gold); font-size: 1.5rem; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 1.5rem; font-size: var(--text-md); color: var(--muted); line-height: 1.8; max-width: 700px; }
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 1024px) { .svc-intro__inner { grid-template-columns: 1fr; } .svc-intro__sticky { position: static; } .includes-grid-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .includes-grid-3 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><img src="../assets/logo.png" alt="Kingston 3 Consulting" width="140" height="40" /></a>
+    <ul class="nav__links">
+      <li><a href="/about.html">About</a></li>
+      <li class="nav__dropdown"><a href="/services.html" class="active">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/media-strategy.html">Media Strategy</a>
+          <a href="/services/literary-representation.html">Literary Representation</a>
+          <a href="/services/advocacy.html">Advocacy</a>
+        </div>
+      </li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/contact.html" class="btn btn--gold nav__cta">Work With Me</a>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile">
+    <ul>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__mobile__footer"><a href="/contact.html" class="btn btn--gold">Work With Me</a></div>
+  </nav>
+</nav>
+<a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="float-cta btn btn--gold">Book a Call →</a>
+
+<!-- HERO -->
+<header class="svc-hero page-hero">
+  <div class="svc-hero__bg">
+    <img src="https://static.wixstatic.com/media/cf261f_da6e490c3c924e9f843aa227fc3aa156~mv2.jpeg" alt="Newsroom" loading="eager" />
+  </div>
+  <div class="svc-hero__overlay"></div>
+  <div class="svc-hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="/services.html">Services</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Media Strategy</span>
+    </nav>
+    <p class="eyebrow eyebrow--gold" style="margin-top:1rem;">Service 01</p>
+    <h1 class="page-hero__title" style="margin-top:1rem;">Media Strategy &<br /><em>Narrative Consulting</em></h1>
+    <p class="page-hero__sub">The story you tell publicly is never just a story. It is a strategic asset — one that either compounds your influence or quietly erodes it. At Kingston 3, we build that asset deliberately.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Discovery Call →</a>
+      <a href="/contact.html" class="btn btn--outline-white">Send an Inquiry</a>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO + SIDEBAR -->
+<section class="svc-intro">
+  <div class="container">
+    <div class="svc-intro__inner">
+      <div class="richtext reveal">
+        <h2>The problem with most media consultants</h2>
+        <p>Most media consultants have never sat inside a newsroom, never built a relationship with an editor, never felt the pressure of a 5 p.m. deadline. They learn media from the outside, which means their advice is always one step behind the reality of how stories are actually assigned, written, and placed.</p>
+        <p>Fabian Lyon spent 17 years at the Miami Herald. He interviewed Kobe Bryant, Usain Bolt, and Nandi Mandela. He covered everything from high-stakes political moments to cultural milestones that defined South Florida's public identity. He knows what journalists are actually looking for — and more importantly, what makes them ignore a pitch entirely.</p>
+        <blockquote>
+          <p>"There is no such thing as 'getting your story out there.' There is only getting your story to the right person, in the right frame, at the right moment. Everything else is noise."</p>
+        </blockquote>
+        <p>That distinction is everything. And it is the foundation of every media strategy engagement at Kingston 3 Consulting.</p>
+
+        <h2>What we actually do for you</h2>
+        <p>Media Strategy at Kingston 3 is not a retainer where you pay monthly for vague "outreach." Every engagement begins with deep narrative architecture work — defining not just what you want to say, but the arc of how your public story develops over time.</p>
+        <p>We identify your core message, your target audiences, and the specific media ecosystems (national, trade, regional, digital) where your story belongs. Then we build a media strategy map: which journalists cover your beat, what angles will resonate, what timing will maximize impact, and how to position you as the source reporters come back to.</p>
+        <p>When you face a public challenge — a controversy, a rebranding moment, or a high-stakes announcement — Fabian brings crisis communications experience that is grounded in newsroom reality, not spin. We help you get ahead of the story before it gets ahead of you.</p>
+
+        <h2>Who this service is for</h2>
+        <p>This service is right for executives who want to own their public narrative, organizations navigating a pivotal moment, public figures looking to build sustained media presence, and anyone who has felt that their real story is being lost in translation somewhere between them and the public.</p>
+        <p>If you have something important to say and you have never been able to say it at the scale it deserves — that is exactly the problem we solve.</p>
+      </div>
+
+      <aside class="svc-intro__sticky reveal-right">
+        <div class="contact-sidebar">
+          <p class="eyebrow eyebrow--gold" style="margin-bottom:0.75rem;">This Service Includes</p>
+          <h4>Everything you need to own the narrative</h4>
+          <div class="sidebar-creds">
+            <span class="sidebar-cred">Brand narrative architecture session</span>
+            <span class="sidebar-cred">Target media ecosystem mapping</span>
+            <span class="sidebar-cred">Earned media pitch strategy</span>
+            <span class="sidebar-cred">Journalist relationship activation</span>
+            <span class="sidebar-cred">Op-ed & byline ghostwriting</span>
+            <span class="sidebar-cred">Crisis communications planning</span>
+            <span class="sidebar-cred">Messaging framework & key messages</span>
+            <span class="sidebar-cred">Interview preparation & media training</span>
+          </div>
+          <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--full" style="margin-top:0.5rem;">Book a Discovery Call →</a>
+          <p style="font-size:var(--text-xs);color:var(--muted);text-align:center;margin-top:0.75rem;">30-minute complimentary call. No obligation.</p>
+        </div>
+        <div style="margin-top:1.5rem; padding:1.5rem; border:1px solid var(--border-lt); border-radius:var(--radius-lg); text-align:center;">
+          <p style="font-family:var(--ff-display);font-size:var(--text-3xl);font-weight:600;color:var(--ink);line-height:1;">17+</p>
+          <p style="font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.4rem;">Years Miami Herald</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="what-includes">
+  <div class="container">
+    <header class="section__header--center">
+      <p class="eyebrow">What's Included</p>
+      <h2 class="h2" style="margin-top:1rem;">Every tool, deployed with purpose</h2>
+    </header>
+    <div class="includes-grid-3">
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Narrative Architecture</h3>
+        <p class="include-card__body">We build the foundational story framework — the through-line that makes every press release, op-ed, and interview feel like a coherent, compelling whole rather than disconnected noise.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Earned Media Strategy</h3>
+        <p class="include-card__body">No spray-and-pray press releases. We identify the specific publications, reporters, and segments where your story has the highest probability of landing — and we pitch with the precision of someone who has been on the other side of that inbox.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Op-Ed & Editorial Ghostwriting</h3>
+        <p class="include-card__body">Your ideas deserve a byline in publications that matter. We craft op-eds and commentary pieces that reflect your voice while meeting the editorial standards of national and regional media.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Crisis Communications</h3>
+        <p class="include-card__body">When a story breaks before you're ready, you need someone who understands how newsrooms operate in real time. Fabian's crisis communications approach is designed to get ahead of the narrative — not chase it.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Media Training & Prep</h3>
+        <p class="include-card__body">From on-camera interviews to podcast appearances and editorial board meetings, we prepare you to be the most compelling version of yourself in every media context.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Thought Leadership Pipeline</h3>
+        <p class="include-card__body">We build a sustainable editorial calendar and speaking opportunity pipeline that keeps your name and ideas circulating in the right rooms throughout the year — not just during launches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="svc-quote-strip">
+  <div class="container">
+    <div class="svc-quote">
+      <p class="svc-quote__text">"A journalist knows that every story has an architecture. The difference between the version that gets told and the version that disappears is whether someone understood that architecture — and built it correctly."</p>
+      <p class="svc-quote__attr"><strong>Fabian Lyon</strong> — Founder, Kingston 3 Consulting · 17-Year Miami Herald Veteran</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container" style="max-width:860px;">
+    <header class="section__header--center">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="h2" style="margin-top:1rem;">Frequently asked</h2>
+    </header>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does a media strategy engagement typically last?</div>
+        <div class="faq-a">Most engagements run 3–6 months at minimum, as sustainable media presence requires time to build momentum, relationships, and editorial placements. We also offer intensive project-based work for specific launches, events, or crisis situations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you guarantee press coverage?</div>
+        <div class="faq-a">No ethical media consultant guarantees specific placements — journalists make their own editorial decisions. What we guarantee is that your pitch will be crafted with real newsroom expertise, targeted to the right reporters and outlets, and delivered at the right moment. Our placement rate reflects 17+ years of earned relationships.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you help with a crisis that is already in motion?</div>
+        <div class="faq-a">Yes. We take crisis communications engagements on an urgent basis. The first 24–48 hours of a public challenge are often the most critical, and Fabian's newsroom experience means he understands exactly how to respond with precision under pressure.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What types of media do you focus on?</div>
+        <div class="faq-a">Our focus is earned media — editorial coverage in print, digital, broadcast, and podcast formats. We work across national outlets, regional newspapers, trade publications, and digital platforms depending on where your target audience lives. We are not a paid media or advertising agency.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do we get started?</div>
+        <div class="faq-a">Book a complimentary 30-minute discovery call via Calendly. Fabian will listen to your situation, ask the questions that matter, and give you an honest assessment of how Kingston 3 can help — and whether we're the right fit for your goals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner__bg-text" aria-hidden="true">Narrative</div>
+  <div class="cta-banner__inner">
+    <p class="eyebrow eyebrow--gold cta-banner__eyebrow">Start Here</p>
+    <h2 class="cta-banner__headline">Your narrative is running<br /><em>whether you manage it or not.</em></h2>
+    <p class="cta-banner__sub">Book a discovery call and let's build a strategy that makes sure your story is told the way it deserves to be.</p>
+    <div class="cta-banner__actions">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Call →</a>
+      <a href="/services.html" class="btn btn--outline-white">All Services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <img src="../assets/logo.png" alt="Kingston 3 Consulting" width="120" height="34" />
+        <p>Boutique narrative strategy and media consulting. Miami, FL.</p>
+        <span class="footer__tagline">Narrative Architect · Influence Engineer</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigate</h4><ul>
+        <li><a href="/about.html">About Fabian</a></li><li><a href="/services.html">Services</a></li>
+        <li><a href="/process.html">Process</a></li><li><a href="/blog/">Insights</a></li><li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Services</h4><ul>
+        <li><a href="/services/media-strategy.html">Media Strategy</a></li>
+        <li><a href="/services/literary-representation.html">Literary Representation</a></li>
+        <li><a href="/services/advocacy.html">Advocacy</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Connect</h4><ul>
+        <li><a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Kingston 3 Consulting. All rights reserved.</p>
+      <p>Built by <a href="https://www.intervirtual.agency" target="_blank" rel="noopener">Intervirtual</a></p>
+    </div>
+  </div>
+</footer>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a21b55c9372a70f7d875c90"></script>
+<script src="../js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

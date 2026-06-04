@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Literary Representation & Book Deals | Kingston 3 Consulting</title>
+  <meta name="description" content="From manuscript concept to signed deal — Kingston 3 Consulting brings editorial credibility and publishing industry connections to authors and public figures who are ready to tell their story." />
+  <link rel="canonical" href="https://www.kingston3consulting.com/services/literary-representation.html" />
+  <meta property="og:title" content="Literary Representation & Book Deals | Kingston 3 Consulting" />
+  <meta property="og:description" content="From manuscript concept to signed deal — Kingston 3 Consulting brings editorial credibility and publishing industry connections to authors and public figures who are ready to tell their story." />
+  <meta property="og:image" content="https://static.wixstatic.com/media/cf261f_9d20dd4eff5e4f7ea19f8b61e5994644~mv2.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .svc-hero { background: var(--ink); padding: 12rem var(--gutter) 7rem; position: relative; overflow: hidden; }
+    .svc-hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .svc-hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(50%); object-position: center 40%; }
+    .svc-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--ink) 45%, rgba(7,7,15,0.55) 100%); }
+    .svc-hero__inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; }
+
+    .svc-intro { padding: var(--section-v) 0; }
+    .svc-intro__inner { display: grid; grid-template-columns: 3fr 2fr; gap: var(--space-2xl); align-items: start; }
+    .svc-intro__sticky { position: sticky; top: 8rem; }
+    .contact-sidebar { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--radius-xl); padding: var(--space-lg); }
+    .contact-sidebar h4 { font-family: var(--ff-display); font-size: var(--text-xl); font-weight: 600; margin-bottom: 0.75rem; }
+    .sidebar-creds { display: flex; flex-direction: column; gap: 0.6rem; margin: 1.25rem 0; }
+    .sidebar-cred { display: flex; align-items: center; gap: 0.6rem; font-size: var(--text-xs); color: var(--muted); }
+    .sidebar-cred::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+    .journey-section { padding: var(--section-v) 0; background: var(--ink); }
+    .journey-steps { display: flex; flex-direction: column; gap: 0; margin-top: var(--space-xl); }
+    .journey-step { display: grid; grid-template-columns: 4rem 1fr; gap: var(--space-lg); padding: var(--space-lg) 0; border-bottom: 1px solid var(--border-dk); align-items: start; }
+    .journey-step:last-child { border-bottom: none; }
+    .journey-step__num { font-family: var(--ff-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: rgba(196,151,74,0.2); line-height: 1; }
+    .journey-step__content h3 { font-family: var(--ff-display); font-size: var(--text-2xl); font-weight: 500; color: var(--cream); margin-bottom: 0.75rem; }
+    .journey-step__content p { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+    .what-includes { padding: var(--section-v) 0; background: var(--surface); }
+    .includes-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+
+    .svc-quote-strip { background: var(--cream); padding: var(--section-v) 0; }
+    .svc-quote { max-width: 820px; margin: 0 auto; text-align: center; }
+    .svc-quote__text { font-family: var(--ff-display); font-size: clamp(1.75rem, 3.5vw, 3rem); font-style: italic; font-weight: 400; color: var(--ink); line-height: 1.4; margin-bottom: 2rem; }
+    .svc-quote__attr { font-size: var(--text-sm); color: var(--muted); }
+    .svc-quote__attr strong { color: var(--gold-dk); }
+
+    .faq-section { padding: var(--section-v) 0; }
+    .faq-list { margin-top: var(--space-xl); display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-lt); }
+    .faq-item { border-bottom: 1px solid var(--border-lt); }
+    .faq-q { font-family: var(--ff-display); font-size: var(--text-xl); font-weight: 500; padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; }
+    .faq-q::after { content: '+'; color: var(--gold); font-size: 1.5rem; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 1.5rem; font-size: var(--text-md); color: var(--muted); line-height: 1.8; max-width: 700px; }
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 1024px) { .svc-intro__inner { grid-template-columns: 1fr; } .svc-intro__sticky { position: static; } .includes-grid-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .journey-step { grid-template-columns: 3rem 1fr; gap: 1rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><img src="../assets/logo.png" alt="Kingston 3 Consulting" width="140" height="40" /></a>
+    <ul class="nav__links">
+      <li><a href="/about.html">About</a></li>
+      <li class="nav__dropdown"><a href="/services.html" class="active">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/media-strategy.html">Media Strategy</a>
+          <a href="/services/literary-representation.html">Literary Representation</a>
+          <a href="/services/advocacy.html">Advocacy</a>
+        </div>
+      </li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/contact.html" class="btn btn--gold nav__cta">Work With Me</a>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile">
+    <ul>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__mobile__footer"><a href="/contact.html" class="btn btn--gold">Work With Me</a></div>
+  </nav>
+</nav>
+<a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="float-cta btn btn--gold">Book a Call →</a>
+
+<!-- HERO -->
+<header class="svc-hero page-hero">
+  <div class="svc-hero__bg">
+    <img src="https://static.wixstatic.com/media/cf261f_9d20dd4eff5e4f7ea19f8b61e5994644~mv2.jpeg" alt="Book Fair" loading="eager" />
+  </div>
+  <div class="svc-hero__overlay"></div>
+  <div class="svc-hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="/services.html">Services</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Literary Representation</span>
+    </nav>
+    <p class="eyebrow eyebrow--gold" style="margin-top:1rem;">Service 02</p>
+    <h1 class="page-hero__title" style="margin-top:1rem;">Literary Representation<br /><em>&amp; Book Deals</em></h1>
+    <p class="page-hero__sub">You have a story that deserves to be a book. Kingston 3 provides the editorial expertise, industry relationships, and strategic positioning to make that happen — from first concept to signed deal.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Discovery Call →</a>
+      <a href="/contact.html" class="btn btn--outline-white">Send an Inquiry</a>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO + SIDEBAR -->
+<section class="svc-intro">
+  <div class="container">
+    <div class="svc-intro__inner">
+      <div class="richtext reveal">
+        <h2>The gap between a great story and a published book</h2>
+        <p>The gap between having a powerful story and having a published book is not about writing ability. It is about knowing how the publishing industry actually works — what acquisitions editors look for, how to structure a proposal that commands a serious offer, and which agents represent the kind of book you are writing.</p>
+        <p>Most people who approach publishing do so blind. They write a query letter, send it into the void, and wait. The results are predictable: form rejections, silence, or worse — a deal that undersells the true potential of their work.</p>
+        <p>Fabian Lyon has spent 17 years at the intersection of storytelling, journalism, and public life. He understands narrative structure at its deepest level, has relationships throughout the media and literary world, and knows what makes a story publishable versus merely interesting.</p>
+        <blockquote>
+          <p>"Every book I've helped shepherd began as a conversation about what someone truly had to say — not what they thought publishers wanted to hear. The strongest deals are built on authenticity, architecture, and timing."</p>
+        </blockquote>
+        <p>Kingston 3 is not a conventional literary agency. We bring together media strategy, narrative architecture, and publishing industry access to give your book the best possible foundation — before it ever reaches an agent's desk.</p>
+
+        <h2>Our approach to literary representation</h2>
+        <p>We begin where all good literary work begins: with the story itself. What is your book truly about? What makes it necessary right now? Who is the reader, and why will they feel seen by your pages? These are not marketing questions — they are the foundational questions that determine whether your proposal gets a second read or a polite pass.</p>
+        <p>Once we have built a compelling narrative framework for your book, we develop a professional-grade proposal that represents your work with the precision and polish that major publishers expect. We then identify the agents and editors who are the right fit — not a mass blast, but a curated, strategic approach based on real industry knowledge.</p>
+        <p>Throughout negotiations, Fabian serves as your advocate and interpreter, helping you understand the fine print, the leverage points, and the long-term implications of every deal term.</p>
+
+        <h2>Beyond the deal: launch strategy</h2>
+        <p>A book deal is only the beginning. The real work — and the real opportunity — is in how you launch. Kingston 3 brings its full media strategy toolkit to book launches, ensuring that your publication date is not just an event but a media moment that amplifies your platform, earns major press, and converts casual readers into committed advocates for your work.</p>
+      </div>
+
+      <aside class="svc-intro__sticky reveal-right">
+        <div class="contact-sidebar">
+          <p class="eyebrow eyebrow--gold" style="margin-bottom:0.75rem;">This Service Includes</p>
+          <h4>From concept to deal to launch</h4>
+          <div class="sidebar-creds">
+            <span class="sidebar-cred">Book concept development session</span>
+            <span class="sidebar-cred">Narrative framework & positioning</span>
+            <span class="sidebar-cred">Professional proposal writing</span>
+            <span class="sidebar-cred">Agent & publisher introductions</span>
+            <span class="sidebar-cred">Query strategy & targeting</span>
+            <span class="sidebar-cred">Deal negotiation guidance</span>
+            <span class="sidebar-cred">Pre-publication PR strategy</span>
+            <span class="sidebar-cred">Launch media campaign planning</span>
+          </div>
+          <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--full" style="margin-top:0.5rem;">Book a Discovery Call →</a>
+          <p style="font-size:var(--text-xs);color:var(--muted);text-align:center;margin-top:0.75rem;">30-minute complimentary call. No obligation.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY STEPS -->
+<section class="journey-section">
+  <div class="container">
+    <header class="section__header--center" style="max-width:640px;margin-inline:auto;">
+      <p class="eyebrow eyebrow--white">The Journey</p>
+      <h2 class="h2 text-white" style="margin-top:1rem;">Your book, step by step</h2>
+    </header>
+    <div class="journey-steps">
+      <div class="journey-step reveal">
+        <span class="journey-step__num">01</span>
+        <div class="journey-step__content">
+          <h3>Story Discovery</h3>
+          <p>We begin with a deep-dive conversation to understand your story, your expertise, your platform, and your publishing goals. Not every story is ready for the market — and knowing the difference is the first act of good representation.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <span class="journey-step__num">02</span>
+        <div class="journey-step__content">
+          <h3>Narrative Architecture</h3>
+          <p>We construct the structural and conceptual framework of your book — the thesis, the arc, the unique angle that separates your work from the hundred others on that topic. This stage is where most projects are won or lost.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <span class="journey-step__num">03</span>
+        <div class="journey-step__content">
+          <h3>Proposal Development</h3>
+          <p>We write a publishing proposal that reads like the best editorial pitch you have ever seen — because that is exactly what it is. Overview, sample chapters, author platform, market analysis, competitive landscape. Built to open doors.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <span class="journey-step__num">04</span>
+        <div class="journey-step__content">
+          <h3>Agent & Publisher Strategy</h3>
+          <p>We identify the agents and acquisitions editors most likely to respond enthusiastically to your specific book. This is a curated, relationship-based approach — not a mass submission to every address in a directory.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <span class="journey-step__num">05</span>
+        <div class="journey-step__content">
+          <h3>Deal Negotiation & Close</h3>
+          <p>When offers come in, we help you understand every element of the deal — advance, royalties, subsidiary rights, publication timeline — and advocate for terms that protect your long-term interests, not just the initial number.</p>
+        </div>
+      </div>
+      <div class="journey-step reveal">
+        <span class="journey-step__num">06</span>
+        <div class="journey-step__content">
+          <h3>Launch Strategy</h3>
+          <p>Publication day is a platform-building event. We build a media and promotional strategy around your launch that amplifies your book's reach, earns major press coverage, and positions you for the next chapter of your public platform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="what-includes">
+  <div class="container">
+    <header class="section__header--center">
+      <p class="eyebrow">What's Included</p>
+      <h2 class="h2" style="margin-top:1rem;">Full-spectrum literary support</h2>
+    </header>
+    <div class="includes-grid-2">
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Book Proposal Writing</h3>
+        <p class="include-card__body">A fully written, professionally formatted book proposal including overview, chapter outline, sample writing, author bio, platform assessment, market analysis, and competitive titles. Built to meet the standard of top literary agents.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Platform Building Strategy</h3>
+        <p class="include-card__body">Publishers invest in authors with platforms. We develop a strategy to build and demonstrate your existing platform — whether through media appearances, speaking, social presence, or a growing readership — in ways that make your proposal more compelling.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Agent Introductions</h3>
+        <p class="include-card__body">Our relationships in the literary world mean warm introductions — not cold queries. We identify agents who represent similar books, prepare targeted submission materials, and facilitate direct connections where appropriate.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card__icon">◈</div>
+        <h3 class="include-card__title">Pre-Publication PR</h3>
+        <p class="include-card__body">The period between signing a deal and your pub date is invaluable for building anticipation. We deploy earned media strategy — excerpts, profiles, podcast appearances — to ensure your book has real momentum before it hits shelves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="svc-quote-strip">
+  <div class="container">
+    <div class="svc-quote">
+      <p class="svc-quote__text">"A book is not just a product. It is the most permanent version of your thinking that will ever exist. It deserves to be built with the same rigor and intentionality that goes into any great piece of journalism."</p>
+      <p class="svc-quote__attr"><strong>Fabian Lyon</strong> — Founder, Kingston 3 Consulting · Miami Herald Veteran</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container" style="max-width:860px;">
+    <header class="section__header--center">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="h2" style="margin-top:1rem;">Frequently asked</h2>
+    </header>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I need a completed manuscript to work with you?</div>
+        <div class="faq-a">Not at all. Most nonfiction books are sold on proposal before the manuscript is written. We can begin working with you at the idea stage. For fiction, a complete manuscript is typically required before approaching agents.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I already have an agent?</div>
+        <div class="faq-a">We still have significant value to offer. Our narrative architecture work strengthens manuscripts and proposals regardless of where they are in the process. We also bring media and PR expertise that most literary agents don't provide.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What types of books do you represent?</div>
+        <div class="faq-a">Our strength is in narrative nonfiction — memoir, journalism, business, cultural commentary, biography, and thought leadership. We also work with public figures developing books that extend an existing media platform.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to get a book deal?</div>
+        <div class="faq-a">The timeline varies widely depending on the strength of your platform, the competitiveness of your concept, and how quickly agents respond. A well-positioned proposal with a strong platform can move quickly — sometimes within months. We set realistic expectations from the start.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you help with self-publishing instead?</div>
+        <div class="faq-a">Yes. For certain books and certain goals, self-publishing is the right choice. We can help you develop the editorial, marketing, and media strategy that makes self-publishing as powerful as traditional publishing — without waiting for gatekeepers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner__bg-text" aria-hidden="true">Author</div>
+  <div class="cta-banner__inner">
+    <p class="eyebrow eyebrow--gold cta-banner__eyebrow">Your Book Is Waiting</p>
+    <h2 class="cta-banner__headline">The story is already in you.<br /><em>Let's build it properly.</em></h2>
+    <p class="cta-banner__sub">Book a complimentary discovery call and let's talk about your book — the story, the market, and the strategy to bring it to life.</p>
+    <div class="cta-banner__actions">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Call →</a>
+      <a href="/services.html" class="btn btn--outline-white">All Services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <img src="../assets/logo.png" alt="Kingston 3 Consulting" width="120" height="34" />
+        <p>Boutique narrative strategy and media consulting. Miami, FL.</p>
+        <span class="footer__tagline">Narrative Architect · Influence Engineer</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigate</h4><ul>
+        <li><a href="/about.html">About Fabian</a></li><li><a href="/services.html">Services</a></li>
+        <li><a href="/process.html">Process</a></li><li><a href="/blog/">Insights</a></li><li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Services</h4><ul>
+        <li><a href="/services/media-strategy.html">Media Strategy</a></li>
+        <li><a href="/services/literary-representation.html">Literary Representation</a></li>
+        <li><a href="/services/advocacy.html">Advocacy</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Connect</h4><ul>
+        <li><a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Kingston 3 Consulting. All rights reserved.</p>
+      <p>Built by <a href="https://www.intervirtual.agency" target="_blank" rel="noopener">Intervirtual</a></p>
+    </div>
+  </div>
+</footer>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a21b55c9372a70f7d875c90"></script>
+<script src="../js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

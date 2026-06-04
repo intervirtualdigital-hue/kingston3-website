@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process | Kingston 3 Consulting</title>
+  <meta name="description" content="From first conversation to measurable impact — discover how Kingston 3 Consulting's four-phase engagement process turns your story into a strategic asset." />
+  <link rel="canonical" href="https://www.kingston3consulting.com/process.html" />
+  <meta property="og:title" content="Our Process | Kingston 3 Consulting" />
+  <meta property="og:description" content="From first conversation to measurable impact — discover how Kingston 3 Consulting's four-phase engagement process turns your story into a strategic asset." />
+  <meta property="og:image" content="https://static.wixstatic.com/media/cf261f_97379fa39e0d4213a8b9d5fc906e5f5c~mv2.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .process-hero { background: var(--dark); padding: 12rem var(--gutter) 7rem; position: relative; overflow: hidden; }
+    .process-hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .process-hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.1; filter: grayscale(100%); }
+    .process-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--ink) 40%, rgba(7,7,15,0.65) 100%); }
+    .process-hero__inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; }
+
+    /* INTRO */
+    .process-intro { padding: var(--section-v) 0; }
+    .process-intro__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+
+    /* PHASE STEPS — full detail */
+    .phases { padding: var(--section-v) 0; background: var(--surface); }
+    .phase-list { display: flex; flex-direction: column; gap: 0; margin-top: var(--space-xl); }
+    .phase-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--space-xl);
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--border-lt);
+      align-items: start;
+    }
+    .phase-item:last-child { border-bottom: none; }
+    .phase-item__left { text-align: center; }
+    .phase-item__num {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 8vw, 7rem);
+      font-weight: 700;
+      color: rgba(196,151,74,0.15);
+      line-height: 1;
+      display: block;
+    }
+    .phase-item__label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-top: -0.5rem;
+    }
+    .phase-item__title { font-family: var(--ff-display); font-size: var(--text-3xl); font-weight: 600; color: var(--ink); margin-bottom: 1rem; line-height: 1.15; }
+    .phase-item__lead { font-size: var(--text-lg); color: var(--ink); font-weight: 300; line-height: 1.65; margin-bottom: 1.25rem; }
+    .phase-item__body { font-size: var(--text-md); color: var(--muted); line-height: 1.85; }
+    .phase-item__body p + p { margin-top: 1rem; }
+    .phase-item__deliverables {
+      margin-top: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border-lt);
+      border-radius: var(--radius-md);
+      padding: 1.25rem var(--space-md);
+    }
+    .phase-item__deliverables h5 { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 0.75rem; }
+    .phase-item__del-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+    .phase-item__del { display: flex; align-items: center; gap: 0.5rem; font-size: var(--text-sm); color: var(--ink); }
+    .phase-item__del::before { content: '→'; color: var(--gold); font-size: 0.75rem; flex-shrink: 0; }
+
+    /* PRINCIPLES */
+    .principles { padding: var(--section-v) 0; background: var(--ink); }
+    .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+    .principle-card { padding: var(--space-lg); border: 1px solid var(--border-dk); border-radius: var(--radius-lg); transition: var(--trans); }
+    .principle-card:hover { border-color: rgba(196,151,74,0.3); }
+    .principle-card__title { font-family: var(--ff-display); font-size: var(--text-2xl); font-weight: 500; color: var(--cream); margin-bottom: 0.75rem; }
+    .principle-card__body { font-size: var(--text-sm); color: rgba(255,255,255,0.45); line-height: 1.75; }
+
+    /* TIMELINE VISUAL */
+    .timeline-strip { padding: var(--space-xl) 0; background: var(--cream); }
+    .timeline-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .timeline-inner::before { content: ''; position: absolute; top: 2rem; left: 12.5%; right: 12.5%; height: 1px; background: var(--gold); z-index: 0; }
+    .timeline-node { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+    .timeline-node__dot { width: 16px; height: 16px; border-radius: 50%; background: var(--gold); margin: 0 auto 1rem; border: 3px solid var(--cream); box-shadow: 0 0 0 2px var(--gold); }
+    .timeline-node__week { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 0.4rem; }
+    .timeline-node__label { font-family: var(--ff-display); font-size: var(--text-lg); font-weight: 500; color: var(--ink); }
+
+    /* FAQ */
+    .faq-section { padding: var(--section-v) 0; }
+    .faq-list { margin-top: var(--space-xl); display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-lt); }
+    .faq-item { border-bottom: 1px solid var(--border-lt); }
+    .faq-q { font-family: var(--ff-display); font-size: var(--text-xl); font-weight: 500; padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; }
+    .faq-q::after { content: '+'; color: var(--gold); font-size: 1.5rem; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 1.5rem; font-size: var(--text-md); color: var(--muted); line-height: 1.8; max-width: 720px; }
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 1024px) { .process-intro__inner { grid-template-columns: 1fr; } .principles-grid { grid-template-columns: 1fr 1fr; } .timeline-inner { grid-template-columns: 1fr 1fr; } .timeline-inner::before { display: none; } }
+    @media (max-width: 768px) {
+      .phase-item { grid-template-columns: 1fr; gap: var(--space-md); }
+      .phase-item__left { text-align: left; display: flex; align-items: baseline; gap: 1rem; }
+      .phase-item__del-grid { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .timeline-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><img src="/assets/logo.png" alt="Kingston 3 Consulting" width="140" height="40" /></a>
+    <ul class="nav__links">
+      <li><a href="/about.html">About</a></li>
+      <li class="nav__dropdown"><a href="/services.html">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/media-strategy.html">Media Strategy</a>
+          <a href="/services/literary-representation.html">Literary Representation</a>
+          <a href="/services/advocacy.html">Advocacy</a>
+        </div>
+      </li>
+      <li><a href="/process.html" class="active">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/contact.html" class="btn btn--gold nav__cta">Work With Me</a>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile">
+    <ul>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__mobile__footer"><a href="/contact.html" class="btn btn--gold">Work With Me</a></div>
+  </nav>
+</nav>
+<a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="float-cta btn btn--gold">Book a Call →</a>
+
+<!-- HERO -->
+<header class="process-hero page-hero">
+  <div class="process-hero__bg">
+    <img src="https://static.wixstatic.com/media/cf261f_97379fa39e0d4213a8b9d5fc906e5f5c~mv2.jpeg" alt="Fabian Lyon" loading="eager" />
+  </div>
+  <div class="process-hero__overlay"></div>
+  <div class="process-hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Process</span>
+    </nav>
+    <p class="eyebrow eyebrow--gold" style="margin-top:1rem;">How We Work</p>
+    <h1 class="page-hero__title" style="margin-top:1rem;">Four phases.<br /><em>One coherent strategy.</em></h1>
+    <p class="page-hero__sub">Every Kingston 3 engagement follows a disciplined, four-phase process designed to move you from initial conversation to measurable impact — without shortcuts, without noise.</p>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="process-intro">
+  <div class="container">
+    <div class="process-intro__inner">
+      <div class="reveal-left">
+        <p class="eyebrow">The Kingston 3 Philosophy</p>
+        <h2 class="h2" style="margin-top:1rem;">Precision over volume. <br /><em style="font-style:italic;color:var(--gold-dk);">Always.</em></h2>
+        <div style="margin-top:1.5rem;" class="about-strip__body">
+          <p>After 17 years in journalism, Fabian Lyon learned one thing above all others: the stories that matter are built on a foundation of deep research, clear thinking, and deliberate strategy. There is no shortcut. There is no "spray and pray."</p>
+          <p>The Kingston 3 process reflects that discipline. Every engagement starts with listening before anything else — understanding your goals, your existing narrative, your audiences, and your competitive landscape. Only then do we build.</p>
+          <p>The result is strategy that holds — not a collection of tactics that look busy but produce nothing lasting.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-lt);border:1px solid var(--border-lt);border-radius:var(--radius-lg);overflow:hidden;">
+          <div style="padding:var(--space-lg);background:var(--white);text-align:center;">
+            <span style="font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;display:block;" data-count="17" data-suffix="+">17+</span>
+            <span style="font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);">Years Newsroom</span>
+          </div>
+          <div style="padding:var(--space-lg);background:var(--surface);text-align:center;">
+            <span style="font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;display:block;">4</span>
+            <span style="font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);">Phase Engagement</span>
+          </div>
+          <div style="padding:var(--space-lg);background:var(--surface);text-align:center;">
+            <span style="font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;display:block;">3</span>
+            <span style="font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);">Service Disciplines</span>
+          </div>
+          <div style="padding:var(--space-lg);background:var(--white);text-align:center;">
+            <span style="font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;display:block;">1</span>
+            <span style="font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);">Boutique Focus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE VISUAL -->
+<div class="timeline-strip">
+  <div class="container">
+    <div class="timeline-inner">
+      <div class="timeline-node">
+        <div class="timeline-node__dot"></div>
+        <p class="timeline-node__week">Phase 1</p>
+        <p class="timeline-node__label">Discovery</p>
+      </div>
+      <div class="timeline-node">
+        <div class="timeline-node__dot"></div>
+        <p class="timeline-node__week">Phase 2</p>
+        <p class="timeline-node__label">Architecture</p>
+      </div>
+      <div class="timeline-node">
+        <div class="timeline-node__dot"></div>
+        <p class="timeline-node__week">Phase 3</p>
+        <p class="timeline-node__label">Activation</p>
+      </div>
+      <div class="timeline-node">
+        <div class="timeline-node__dot"></div>
+        <p class="timeline-node__week">Phase 4</p>
+        <p class="timeline-node__label">Amplification</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASES IN DETAIL -->
+<section class="phases">
+  <div class="container">
+    <header class="section__header--center">
+      <p class="eyebrow">The Process</p>
+      <h2 class="h2" style="margin-top:1rem;">How every engagement unfolds</h2>
+    </header>
+
+    <div class="phase-list">
+      <!-- Phase 1 -->
+      <div class="phase-item reveal">
+        <div class="phase-item__left">
+          <span class="phase-item__num">01</span>
+          <span class="phase-item__label">Discovery</span>
+        </div>
+        <div>
+          <h3 class="phase-item__title">Deep Listening & Landscape Mapping</h3>
+          <p class="phase-item__lead">Before we say a single word about your strategy, we listen. Deeply and without agenda.</p>
+          <div class="phase-item__body">
+            <p>The Discovery phase begins with an intensive onboarding conversation — not a brief intake form, but a real dialogue. We want to understand your goals, your current narrative position, how you are perceived publicly versus how you want to be perceived, and what obstacles have stood between you and the influence you deserve.</p>
+            <p>We then conduct a comprehensive landscape audit: existing media coverage, competitive positioning, current messaging, stakeholder ecosystem, and any prior communications work. This gives us the full picture before we begin building.</p>
+            <p>By the end of Discovery, we have a shared understanding of exactly where you are, where you want to go, and what it will take to get there — without illusions, without flattery.</p>
+          </div>
+          <div class="phase-item__deliverables">
+            <h5>Deliverables</h5>
+            <div class="phase-item__del-grid">
+              <span class="phase-item__del">Discovery interview & intake session</span>
+              <span class="phase-item__del">Current narrative audit</span>
+              <span class="phase-item__del">Media coverage landscape review</span>
+              <span class="phase-item__del">Stakeholder & audience mapping</span>
+              <span class="phase-item__del">Goals alignment document</span>
+              <span class="phase-item__del">Opportunity gap analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase-item reveal">
+        <div class="phase-item__left">
+          <span class="phase-item__num">02</span>
+          <span class="phase-item__label">Architecture</span>
+        </div>
+        <div>
+          <h3 class="phase-item__title">Narrative Architecture & Strategic Blueprint</h3>
+          <p class="phase-item__lead">Your narrative is not a slogan. It is a strategic architecture that every piece of public communication is built on.</p>
+          <div class="phase-item__body">
+            <p>In the Architecture phase, we build the foundational framework that will guide every element of your engagement. This begins with your core narrative — the through-line that makes you, your work, and your goals coherent to any audience in any medium.</p>
+            <p>We then develop the full strategic blueprint: target media ecosystems and journalists, messaging frameworks for different audiences, content and editorial strategy, a media placement roadmap, and the specific tactics that will be deployed in Phase 3. For literary clients, this phase includes book concept architecture and proposal development. For advocacy clients, it includes the coalition strategy and campaign messaging framework.</p>
+            <p>Nothing moves until this architecture is solid. This is where most engagements are actually won or lost.</p>
+          </div>
+          <div class="phase-item__deliverables">
+            <h5>Deliverables</h5>
+            <div class="phase-item__del-grid">
+              <span class="phase-item__del">Core narrative framework</span>
+              <span class="phase-item__del">Messaging architecture document</span>
+              <span class="phase-item__del">Target media & journalist map</span>
+              <span class="phase-item__del">Editorial & content strategy</span>
+              <span class="phase-item__del">Strategic blueprint document</span>
+              <span class="phase-item__del">90-day activation roadmap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase-item reveal">
+        <div class="phase-item__left">
+          <span class="phase-item__num">03</span>
+          <span class="phase-item__label">Activation</span>
+        </div>
+        <div>
+          <h3 class="phase-item__title">Strategic Activation & Execution</h3>
+          <p class="phase-item__lead">Strategy without execution is just a document. This is where Kingston 3 goes to work.</p>
+          <div class="phase-item__body">
+            <p>The Activation phase is where the blueprint becomes reality. We begin deploying the media strategy — pitching journalists with precision-crafted, newsroom-ready angles; developing and placing op-eds and editorial content; executing on literary submission strategy; or launching advocacy campaign components depending on your engagement type.</p>
+            <p>Throughout Activation, Fabian is directly engaged — not delegating to junior associates. Every pitch, every relationship activation, every piece of written content that goes under your name is crafted with 17 years of editorial expertise behind it.</p>
+            <p>We provide regular progress updates and maintain full transparency about what is moving, what is in progress, and what adjustments are being made in real time based on market and editorial response.</p>
+          </div>
+          <div class="phase-item__deliverables">
+            <h5>Deliverables</h5>
+            <div class="phase-item__del-grid">
+              <span class="phase-item__del">Media pitches & relationship activation</span>
+              <span class="phase-item__del">Op-ed & editorial content</span>
+              <span class="phase-item__del">Press materials & pitch deck</span>
+              <span class="phase-item__del">Interview preparation sessions</span>
+              <span class="phase-item__del">Weekly progress reporting</span>
+              <span class="phase-item__del">Real-time strategic adjustments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase-item reveal">
+        <div class="phase-item__left">
+          <span class="phase-item__num">04</span>
+          <span class="phase-item__label">Amplification</span>
+        </div>
+        <div>
+          <h3 class="phase-item__title">Amplification, Measurement & Sustained Momentum</h3>
+          <p class="phase-item__lead">A single media placement is not a strategy. Compounding presence is.</p>
+          <div class="phase-item__body">
+            <p>In the Amplification phase, we take what is working and build velocity behind it. Every earned media placement becomes a credibility asset to be leveraged for the next. Every speaking appearance opens a new door. Every published piece strengthens your positioning as the authoritative voice in your space.</p>
+            <p>We measure what matters — not vanity metrics, but actual indicators of narrative influence: quality and tier of media placements, share of voice in your issue area, audience engagement with editorial content, and progress toward the specific goals defined in Discovery.</p>
+            <p>We also build the infrastructure for sustained influence after the engagement: an editorial pipeline, a media relationship network, a speaking strategy, and the documented messaging frameworks your team can carry forward.</p>
+          </div>
+          <div class="phase-item__deliverables">
+            <h5>Deliverables</h5>
+            <div class="phase-item__del-grid">
+              <span class="phase-item__del">Placement leverage & amplification</span>
+              <span class="phase-item__del">Impact measurement report</span>
+              <span class="phase-item__del">Editorial pipeline documentation</span>
+              <span class="phase-item__del">Media relationship handoff guide</span>
+              <span class="phase-item__del">Strategic recommendations for Year 2</span>
+              <span class="phase-item__del">Engagement close-out briefing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="container">
+    <header class="section__header--center" style="max-width:640px;margin-inline:auto;">
+      <p class="eyebrow eyebrow--white">Our Principles</p>
+      <h2 class="h2 text-white" style="margin-top:1rem;">What we believe about the work</h2>
+    </header>
+    <div class="principles-grid">
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Journalism-Grade Rigor</h3>
+        <p class="principle-card__body">Every strategy, pitch, and piece of content is built to the standard of a seasoned editor — because that is the standard journalists hold it to. There is no "good enough" at Kingston 3.</p>
+      </div>
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Precision Over Volume</h3>
+        <p class="principle-card__body">We do not send 200 emails and hope something lands. We identify the exact right targets, build the exact right case, and deploy at the exact right moment. Quality of reach matters more than quantity.</p>
+      </div>
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Relationships, Not Transactions</h3>
+        <p class="principle-card__body">Fabian's network was built over 17 years of genuine relationship-building inside the media industry. Every contact is a real relationship — which is why they respond, and why they keep responding.</p>
+      </div>
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Long-Term Thinking</h3>
+        <p class="principle-card__body">We optimize for sustained influence, not one-time hits. Every tactic is chosen with the question: does this compound over time, or does it just look good in the short term?</p>
+      </div>
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Radical Transparency</h3>
+        <p class="principle-card__body">You will always know what we are doing, why we are doing it, and what the results are. No black box strategy. No inflated metrics. No hiding behind vague deliverables.</p>
+      </div>
+      <div class="principle-card reveal">
+        <h3 class="principle-card__title">Boutique Intentionality</h3>
+        <p class="principle-card__body">Kingston 3 takes on a deliberately limited number of clients at any time. Because doing this work well requires undivided attention — and undivided attention is what you will get.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container" style="max-width:860px;">
+    <header class="section__header--center">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="h2" style="margin-top:1rem;">Frequently asked about working together</h2>
+    </header>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does a typical engagement last?</div>
+        <div class="faq-a">Most engagements run 3–6 months at minimum, with many clients choosing to continue into long-term retainer relationships after the initial engagement. We also offer intensive project-based work for specific launches, campaigns, or crisis situations — which can run 4–8 weeks.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many clients does Kingston 3 take on at a time?</div>
+        <div class="faq-a">By design, we keep our client roster small. Fabian is directly involved in every engagement, and that level of involvement requires selectivity. We typically work with no more than five active clients at any time — which is why we ask prospective clients to book a discovery call rather than submit a form.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will I be working directly with Fabian?</div>
+        <div class="faq-a">Yes. Fabian Lyon is your point of contact, your strategist, and your practitioner throughout the engagement. We do not use the boutique label as a front for delegating to juniors. When you work with Kingston 3, you are working with Fabian.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the onboarding process look like?</div>
+        <div class="faq-a">It begins with a complimentary 30-minute discovery call. If there is a mutual fit, we move to a paid Strategy Session — a deeper 90-minute engagement that produces a preliminary strategic assessment and defines the scope of a full engagement. Full engagements begin within 1–2 weeks of the Strategy Session.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if my situation is urgent — can you move quickly?</div>
+        <div class="faq-a">Yes. For crisis communications and time-sensitive situations, we offer urgent engagement pathways. The first 24–48 hours of a public challenge are critical, and Fabian can be engaged rapidly when circumstances require it. Contact us directly via the contact page for urgent situations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What industries or sectors do you work in?</div>
+        <div class="faq-a">Our work spans media, publishing, nonprofit, civic leadership, sports and culture, business and entrepreneurship, and public affairs. What matters more than industry is the presence of a high-stakes narrative challenge and a client committed to the discipline the work requires.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I know if Kingston 3 is the right fit for me?</div>
+        <div class="faq-a">The clearest indicators: you have a story that deserves more reach than it is getting; you are at an inflection point where your public narrative matters more than usual; or you have been frustrated by the gap between your real value and your public perception. If any of those resonate, book a discovery call. The conversation itself will tell you whether there is a fit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner__bg-text" aria-hidden="true">Process</div>
+  <div class="cta-banner__inner">
+    <p class="eyebrow eyebrow--gold cta-banner__eyebrow">Ready to Start?</p>
+    <h2 class="cta-banner__headline">The first step is a<br /><em>30-minute conversation.</em></h2>
+    <p class="cta-banner__sub">Book a complimentary discovery call. No sales pitch — just a real conversation about your goals and how Kingston 3 can help you reach them.</p>
+    <div class="cta-banner__actions">
+      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Discovery Call →</a>
+      <a href="/contact.html" class="btn btn--outline-white">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <img src="/assets/logo.png" alt="Kingston 3 Consulting" width="120" height="34" />
+        <p>Boutique narrative strategy and media consulting. Miami, FL.</p>
+        <span class="footer__tagline">Narrative Architect · Influence Engineer</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigate</h4><ul>
+        <li><a href="/about.html">About Fabian</a></li><li><a href="/services.html">Services</a></li>
+        <li><a href="/process.html">Process</a></li><li><a href="/blog/">Insights</a></li><li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Services</h4><ul>
+        <li><a href="/services/media-strategy.html">Media Strategy</a></li>
+        <li><a href="/services/literary-representation.html">Literary Representation</a></li>
+        <li><a href="/services/advocacy.html">Advocacy</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Connect</h4><ul>
+        <li><a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Kingston 3 Consulting. All rights reserved.</p>
+      <p>Built by <a href="https://www.intervirtual.agency" target="_blank" rel="noopener">Intervirtual</a></p>
+    </div>
+  </div>
+</footer>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a21b55c9372a70f7d875c90"></script>
+<script src="/js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

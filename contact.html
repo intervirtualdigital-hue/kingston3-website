@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Me | Book a Strategy Call | Kingston 3 Consulting</title>
+  <meta name="description" content="Ready to take control of your narrative? Book a complimentary 30-minute discovery call with Fabian Lyon or send your story directly. Spots are limited." />
+  <link rel="canonical" href="https://www.kingston3consulting.com/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-2xl);
+      align-items: start;
+      padding: var(--space-3xl) 0;
+    }
+    .contact-info { position: sticky; top: 120px; }
+    .contact-info__headline {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .contact-info__body {
+      font-size: var(--text-md);
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+    .contact-info__trust {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .contact-info__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: var(--text-sm);
+      color: var(--ink);
+    }
+    .contact-info__trust-item::before {
+      content: '✓';
+      width: 24px; height: 24px;
+      background: rgba(196,151,74,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .contact-info__calendly {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      margin-top: 2rem;
+      border-left: 3px solid var(--gold);
+    }
+    .contact-info__calendly h4 {
+      font-family: var(--ff-display);
+      font-size: var(--text-xl);
+      margin-bottom: 0.5rem;
+    }
+    .contact-info__calendly p {
+      font-size: var(--text-sm);
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><img src="assets/logo.png" alt="Kingston 3 Consulting" width="140" height="40" /></a>
+    <ul class="nav__links">
+      <li><a href="/about.html">About</a></li>
+      <li class="nav__dropdown">
+        <a href="/services.html">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/media-strategy.html">Media Strategy</a>
+          <a href="/services/literary-representation.html">Literary Representation</a>
+          <a href="/services/advocacy.html">Advocacy</a>
+        </div>
+      </li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="/contact.html" class="btn btn--gold nav__cta">Work With Me</a>
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile">
+    <ul>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/process.html">Process</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__mobile__footer">
+      <a href="/contact.html" class="btn btn--gold">Work With Me</a>
+    </div>
+  </nav>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="https://static.wixstatic.com/media/cf261f_9d20dd4eff5e4f7ea19f8b61e5994644~mv2.jpeg" alt="" loading="eager" />
+    <div class="page-hero__overlay"></div>
+  </div>
+  <div class="page-hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">·</span>
+      <span>Work With Me</span>
+    </nav>
+    <p class="eyebrow eyebrow--gold page-hero__eyebrow">Start Here</p>
+    <h1 class="page-hero__title">
+      Every great narrative<br />
+      starts with a<br />
+      <em>conversation.</em>
+    </h1>
+    <p class="page-hero__sub">Book a complimentary 30-minute discovery call or send your story directly. Spots are limited — every inquiry is reviewed personally.</p>
+  </div>
+</section>
+
+<!-- CONTACT BODY -->
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Info Column -->
+      <div class="contact-info reveal-left">
+        <p class="eyebrow" style="margin-bottom:1.5rem">Let's Talk</p>
+        <h2 class="contact-info__headline">
+          The right story,<br />
+          told the right way,<br />
+          changes everything.
+        </h2>
+        <p class="contact-info__body">
+          Whether you're navigating heightened media exposure, launching a book, building a personal brand, or ensuring your organization's story lands the way it should — this is where we begin.
+        </p>
+
+        <div class="contact-info__trust">
+          <div class="contact-info__trust-item">Complimentary 30-min discovery call — no commitment</div>
+          <div class="contact-info__trust-item">Every inquiry reviewed personally by Fabian</div>
+          <div class="contact-info__trust-item">Limited spots — selective engagements only</div>
+          <div class="contact-info__trust-item">Serving clients across the US, Caribbean &amp; internationally</div>
+        </div>
+
+        <div class="contact-info__calendly">
+          <h4>Prefer to book directly?</h4>
+          <p>Skip the form and schedule your discovery call in one click. 30 minutes. No agenda but yours.</p>
+          <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--dark">Book on Calendly →</a>
+        </div>
+
+        <div style="margin-top:2.5rem">
+          <p class="eyebrow" style="margin-bottom:1rem">Connect</p>
+          <p style="font-size:var(--text-sm);color:var(--muted)">
+            <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" style="color:var(--gold)">LinkedIn</a> ·
+            <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" style="color:var(--gold)">@kingston_3_consulting</a>
+          </p>
+          <p style="font-size:var(--text-sm);color:var(--muted);margin-top:0.5rem">Miami, FL — Serving clients across the United States, the Caribbean, and internationally.</p>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="reveal-right">
+        <div class="form-wrap">
+          <h3 style="font-family:var(--ff-display);font-size:var(--text-2xl);margin-bottom:0.5rem">Send Your Story</h3>
+          <p style="font-size:var(--text-sm);color:var(--muted);margin-bottom:2rem">Tell Fabian what you're working on. Be as candid as you like — every message is confidential.</p>
+
+          <form class="form" id="contactForm" data-form action="#" method="POST" novalidate>
+            <div class="form__row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="First" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="role">I am a... <span class="req">*</span></label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="athlete">Athlete / Sports Professional</option>
+                <option value="executive">Executive / Entrepreneur</option>
+                <option value="author">Author / Creative</option>
+                <option value="public-figure">Public Figure</option>
+                <option value="nonprofit">Nonprofit / Organization</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="challenge">What challenge are you facing? <span class="req">*</span></label>
+              <select id="challenge" name="challenge" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Building / launching a personal brand</option>
+                <option>Managing media scrutiny or a crisis</option>
+                <option>Launching a book or creative project</option>
+                <option>Attracting media coverage and press</option>
+                <option>Preparing for interviews or public speaking</option>
+                <option>Nonprofit or org communications</option>
+                <option>General narrative strategy consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="story">Tell Me Your Story <span class="req">*</span></label>
+              <textarea id="story" name="story" rows="6" placeholder="Who are you, what are you working on, and what does success look like for you? Be as candid as you like." required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="source">How did you hear about us?</label>
+              <select id="source" name="source">
+                <option value="" disabled selected>Optional</option>
+                <option>Google / Search</option>
+                <option>LinkedIn</option>
+                <option>Instagram</option>
+                <option>Referral</option>
+                <option>Press / Media</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--gold btn--full btn--lg">Send Your Story →</button>
+            <p class="form-note">Or prefer to jump straight to a call? <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book on Calendly →</a></p>
+          </form>
+
+          <div class="form__success">
+            <div style="font-size:3rem;margin-bottom:1rem">✓</div>
+            <h3>Message received.</h3>
+            <p>Fabian reviews every message personally. You'll hear back within 24–48 hours. If you'd like to lock in a call sooner, <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" style="color:var(--gold)">book directly on Calendly</a>.</p>
+          </div>
+        </div>
+
+        <!-- GHL Chat Widget placeholder -->
+        <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a21b55c9372a70f7d875c90"></script>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Kingston 3 Consulting" width="120" height="34" />
+        <p>Boutique narrative strategy and media consulting. Miami, FL.</p>
+        <span class="footer__tagline">Narrative Architect · Influence Engineer</span>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigate</h4><ul>
+        <li><a href="/about.html">About Fabian</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/process.html">Our Process</a></li>
+        <li><a href="/blog/">Insights</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Services</h4><ul>
+        <li><a href="/services/media-strategy.html">Media Strategy</a></li>
+        <li><a href="/services/literary-representation.html">Literary Representation</a></li>
+        <li><a href="/services/advocacy.html">Advocacy</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Connect</h4><ul>
+        <li><a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://www.linkedin.com/in/kingston-3-consulting-99b251384/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kingston_3_consulting/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Kingston 3 Consulting. All rights reserved.</p>
+      <p>Built by <a href="https://www.intervirtual.agency" target="_blank" rel="noopener">Intervirtual</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

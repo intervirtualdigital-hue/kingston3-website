@@ -1,0 +1,99 @@
+name: Test → Build → Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write
+
+concurrency:
+  group: "deploy-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  # ── 1. PLAYWRIGHT TESTS ───────────────────────────────────────────────────
+  test:
+    name: Playwright E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox
+
+      - name: Run Playwright tests
+        run: npx playwright test --project=chromium
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+  # ── 2. DEPLOY TO VERCEL ───────────────────────────────────────────────────
+  deploy-vercel:
+    name: Deploy to Vercel
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    environment:
+      name: vercel-production
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Deploy to Vercel (Production)
+        id: deploy
+        run: |
+          URL=$(vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "✅ Deployed to: $URL"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+  # ── 3. DEPLOY TO GITHUB PAGES (backup) ───────────────────────────────────
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    environment:
+      name: github-pages
+      url: ${{ steps.pages-deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - id: pages-deploy
+        uses: actions/deploy-pages@v4
