@@ -39,8 +39,12 @@ test.describe('Homepage', () => {
     await expect(page.locator('.marquee')).toBeVisible();
   });
 
-  test('stats bar shows Miami Herald credential', async ({ page }) => {
-    await expect(page.locator('.stats')).toContainText('Miami Herald');
+  test('credibility section shows all three names', async ({ page }) => {
+    const cred = page.locator('.credibility');
+    await cred.scrollIntoViewIfNeeded();
+    await expect(cred).toContainText('Kobe Bryant');
+    await expect(cred).toContainText('Usain Bolt');
+    await expect(cred).toContainText('Nandi Mandela');
   });
 
   test('services section has 3 items', async ({ page }) => {
@@ -96,14 +100,9 @@ test.describe('Homepage', () => {
     await expect(footer.locator('a[href*="instagram"]')).toBeVisible();
   });
 
-  test('floating CTA button appears after scroll', async ({ page }) => {
-    // Initially hidden
-    const floatBtn = page.locator('.float-cta');
-    await expect(floatBtn).not.toHaveClass(/visible/);
-    // Scroll down to trigger
-    await page.evaluate(() => window.scrollBy(0, 600));
-    await page.waitForTimeout(500);
-    await expect(floatBtn).toHaveClass(/visible/);
+  test('floating CTA button is removed (GHL chatbot handles this)', async ({ page }) => {
+    const floatBtns = page.locator('.float-cta.btn');
+    await expect(floatBtns).toHaveCount(0);
   });
 
   test('nav becomes scrolled after scroll', async ({ page }) => {
@@ -403,15 +402,14 @@ test.describe('Booking Modal', () => {
 
 // ─── VSL SECTION ─────────────────────────────────────────────────────────────
 test.describe('VSL Section', () => {
-  test('VSL section is present on homepage', async ({ page }) => {
+  test('VSL player is present in hero', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('.vsl-section')).toBeVisible();
+    await expect(page.locator('.hero-home__vsl .vsl-player')).toBeVisible();
   });
 
-  test('VSL play button is visible', async ({ page }) => {
+  test('VSL play button is visible in hero', async ({ page }) => {
     await page.goto('/');
-    await page.locator('.vsl-player').scrollIntoViewIfNeeded();
-    await expect(page.locator('.vsl-player__btn')).toBeVisible();
+    await expect(page.locator('.hero-home__vsl .vsl-player__btn')).toBeVisible();
   });
 
   test('VSL video modal opens on play click', async ({ page }) => {

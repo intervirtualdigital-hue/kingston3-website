@@ -262,19 +262,38 @@ const VSL_URL   = ''; // e.g. 'https://www.youtube.com/embed/dQw4w9WgXcQ?autopla
 (function initReveal() {
   const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   if (!targets.length) return;
+
+  function revealEl(el, delay) {
+    setTimeout(() => el.classList.add('visible'), delay || 0);
+  }
+
+  function getDelay(el) {
+    const siblings = el.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    let d = 0;
+    siblings.forEach((s, i) => { if (s === el) d = i * 90; });
+    return d;
+  }
+
+  // Fire elements already visible in the initial viewport immediately
+  const vh = window.innerHeight;
+  targets.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) revealEl(el, getDelay(el));
+  });
+
+  // Observe the rest — large rootMargin pre-fires content just below the fold
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const parent = entry.target.parentElement;
-        const siblings = parent.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-        let delay = 0;
-        siblings.forEach((s, i) => { if (s === entry.target) delay = i * 90; });
-        setTimeout(() => entry.target.classList.add('visible'), delay);
+        revealEl(entry.target, getDelay(entry.target));
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  targets.forEach(el => io.observe(el));
+  }, { threshold: 0.01, rootMargin: '0px 0px 500px 0px' });
+
+  targets.forEach(el => {
+    if (!el.classList.contains('visible')) io.observe(el);
+  });
 })();
 
 // ================================================================
