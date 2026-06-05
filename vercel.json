@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "kingston3-consulting",
   "builds": [
     {
       "src": "**/*",
