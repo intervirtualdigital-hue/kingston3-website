@@ -1192,12 +1192,12 @@ h5, .h5 {
   background: var(--ink);
   padding: 12rem var(--gutter) 7rem;
   position: relative;
-  overflow: hidden;
 }
 .page-hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 .page-hero__bg img {
   width: 100%; height: 100%;
@@ -1966,9 +1966,13 @@ img { max-width: 100%; height: auto; }
   .footer__main { grid-template-columns: 1fr; gap: 2rem; }
   .footer__bottom { flex-direction: column; text-align: center; }
 
-  /* Page hero inner pages */
-  .page-hero { padding: 8rem var(--gutter) 3.5rem; }
+  /* Page hero inner pages — allow content to grow, never clip */
+  .page-hero { padding: 7rem var(--gutter) 4rem; min-height: auto; }
   .page-hero__title { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+  .page-hero__sub { font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+  /* Intro section — tighter on mobile */
+  .intro { padding: clamp(3rem, 8vw, 5rem) 0; }
 
   /* Grid fixes */
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
