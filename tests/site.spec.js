@@ -295,7 +295,7 @@ test.describe('Contact page', () => {
     await page.locator('#firstName').fill('Test');
     await page.locator('#email').fill('not-an-email');
     await page.locator('#story').fill('Test story');
-    await page.locator('[type="submit"]').click();
+    await page.locator('#contactForm [type="submit"]').click();
     const emailInput = page.locator('#email');
     const validState = await emailInput.evaluate(el => el.validity.valid);
     expect(validState).toBe(false);
@@ -353,5 +353,77 @@ test.describe('Performance & accessibility', () => {
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
     const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
     expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 1);
+  });
+});
+
+// ─── BOOKING MODAL ───────────────────────────────────────────────────────────
+test.describe('Booking Modal', () => {
+  test('opens when Work With Me CTA is clicked', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav__cta').click();
+    await expect(page.locator('#bookingModal')).toHaveClass(/open/);
+  });
+
+  test('modal has intake form with required fields', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav__cta').click();
+    await expect(page.locator('#m_firstName')).toBeVisible();
+    await expect(page.locator('#m_email')).toBeVisible();
+    await expect(page.locator('#m_story')).toBeVisible();
+  });
+
+  test('closes on X button click', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav__cta').click();
+    await expect(page.locator('#bookingModal')).toHaveClass(/open/);
+    await page.locator('#modalClose').click();
+    await expect(page.locator('#bookingModal')).not.toHaveClass(/open/);
+  });
+
+  test('closes on Escape key', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav__cta').click();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#bookingModal')).not.toHaveClass(/open/);
+  });
+
+  test('closes on overlay click', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav__cta').click();
+    await page.locator('#bookingModal').click({ position: { x: 5, y: 5 } });
+    await expect(page.locator('#bookingModal')).not.toHaveClass(/open/);
+  });
+
+  test('hero Book a Call button opens modal', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.hero-home__actions a').first().click();
+    await expect(page.locator('#bookingModal')).toHaveClass(/open/);
+  });
+});
+
+// ─── VSL SECTION ─────────────────────────────────────────────────────────────
+test.describe('VSL Section', () => {
+  test('VSL section is present on homepage', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.vsl-section')).toBeVisible();
+  });
+
+  test('VSL play button is visible', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.vsl-player').scrollIntoViewIfNeeded();
+    await expect(page.locator('.vsl-player__btn')).toBeVisible();
+  });
+
+  test('VSL video modal opens on play click', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.vsl-player').click();
+    await expect(page.locator('#videoModal')).toHaveClass(/open/);
+  });
+
+  test('VSL video modal closes on X', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.vsl-player').click();
+    await page.locator('#videoModalClose').click();
+    await expect(page.locator('#videoModal')).not.toHaveClass(/open/);
   });
 });
