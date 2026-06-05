@@ -109,9 +109,6 @@
     .hero-home__headline em{font-style:italic;color:var(--gold)}
     .hero-home__sub{font-size:clamp(1.05rem,1.6vw,1.15rem);color:rgba(255,255,255,.65);max-width:520px;line-height:1.8;margin-bottom:3rem;font-weight:300}
     .hero-home__actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
-    /* Float CTA */
-    .float-cta{position:fixed;bottom:2rem;right:2rem;z-index:150;opacity:0;transform:translateY(20px);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none}
-    .float-cta.visible{opacity:1;transform:translateY(0);pointer-events:all}
     /* Scroll hint */
     .hero-home__scroll-hint{position:absolute;bottom:3rem;right:var(--gutter);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.75rem;color:rgba(255,255,255,.35);font-size:clamp(.7rem,1vw,.75rem);letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
     /* Mobile critical */
@@ -167,9 +164,7 @@
 </nav>
 
 <!-- ===== FLOATING CTA ===== -->
-<a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="float-cta btn btn--gold" aria-label="Book a strategy call">
-  Book a Call →
-</a>
+<!-- Float CTA removed — GHL chatbot handles this -->
 
 <!-- ===== HERO ===== -->
 <section class="hero-home" id="hero" aria-label="Hero">
@@ -184,49 +179,47 @@
     <div class="hero-home__overlay"></div>
     <div class="hero-home__overlay2"></div>
   </div>
-  <div class="hero-home__content">
-    <p class="hero-home__eyebrow">Literary Representation · Media Strategy · Public Positioning</p>
-    <h1 class="hero-home__headline">
-      If you don't<br />
-      define who<br />
-      you are, the<br />
-      <em>public will.</em>
-    </h1>
-    <p class="hero-home__sub">
-      Kingston 3 Consulting is a boutique advisory firm helping executives, athletes, authors, and public figures own their narrative — and be heard at the level they deserve.
-    </p>
-    <div class="hero-home__actions">
-      <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Strategy Call</a>
-      <a href="/about.html" class="btn btn--outline-white btn--lg">Meet Fabian Lyon</a>
+  <!-- Split hero: text left + VSL right — all within one viewport -->
+  <div class="hero-home__content hero-home__content--split">
+    <!-- Left: Copy -->
+    <div class="hero-home__left">
+      <p class="hero-home__eyebrow">Literary Representation · Media Strategy · Public Positioning</p>
+      <h1 class="hero-home__headline">
+        If you don't<br />
+        define who<br />
+        you are, the<br />
+        <em>public will.</em>
+      </h1>
+      <p class="hero-home__sub">
+        Kingston 3 Consulting is a boutique advisory firm helping executives, athletes, authors, and public figures own their narrative — and be heard at the level they deserve.
+      </p>
+      <div class="hero-home__actions">
+        <a href="https://calendly.com/fabianlyon2312" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Book a Strategy Call</a>
+        <a href="/about.html" class="btn btn--outline-white btn--lg">Meet Fabian Lyon</a>
+      </div>
+    </div>
+    <!-- Right: VSL Player -->
+    <div class="hero-home__vsl">
+      <div class="vsl-player" data-vsl role="button" tabindex="0" aria-label="Watch — how we build narratives that move" onkeydown="if(event.key==='Enter')this.click()">
+        <img
+          src="https://static.wixstatic.com/media/cf261f_97379fa39e0d4213a8b9d5fc906e5f5c~mv2.jpeg"
+          alt="Fabian Lyon — watch the narrative strategy overview"
+          class="vsl-player__thumb"
+          loading="eager"
+          width="600" height="750"
+        />
+        <div class="vsl-player__overlay">
+          <div class="vsl-player__btn" aria-hidden="true"></div>
+          <span class="vsl-player__label">Watch Free Training</span>
+        </div>
+        <span class="vsl-player__duration">3:47</span>
+      </div>
+      <p class="hero-home__vsl-caption">
+        Fabian breaks down the exact process — how we build narratives that open rooms, protect legacies, and get you heard.
+      </p>
     </div>
   </div>
   <div class="hero-home__scroll-hint" aria-hidden="true">Scroll</div>
-</section>
-
-<!-- ===== VSL — VIDEO SALES LETTER ===== -->
-<section class="vsl-section" aria-label="Watch Fabian Lyon">
-  <div class="vsl-inner">
-    <div class="vsl-copy reveal-left">
-      <p class="eyebrow eyebrow--gold">See It In Action</p>
-      <h2>Watch how we turn your story into your greatest strategic asset.</h2>
-      <p>In this short video, Fabian breaks down exactly how Kingston 3 Consulting helps executives, athletes, and public figures take control of their narrative — and why most people wait too long to start.</p>
-      <button class="btn btn--gold" data-vsl aria-label="Watch the video">▶ Watch the Video</button>
-    </div>
-    <div class="vsl-player reveal-right" data-vsl role="button" tabindex="0" aria-label="Play video" onkeydown="if(event.key==='Enter')this.click()">
-      <img
-        src="https://static.wixstatic.com/media/cf261f_833c377c34d447b79ec21eec3e6ae564~mv2.jpeg"
-        alt="Fabian Lyon — watch the narrative strategy overview"
-        class="vsl-player__thumb"
-        loading="lazy"
-        width="800" height="450"
-      />
-      <div class="vsl-player__overlay">
-        <div class="vsl-player__btn" aria-hidden="true"></div>
-        <span class="vsl-player__label">Watch Free Training</span>
-      </div>
-      <span class="vsl-player__duration">3:47</span>
-    </div>
-  </div>
 </section>
 
 <!-- ===== MARQUEE ===== -->
@@ -257,33 +250,47 @@
 </div>
 
 <!-- ===== STATS ===== -->
-<section class="stats" aria-label="Credentials">
+<!-- ===== CREDIBILITY SECTION ===== -->
+<section class="credibility" aria-label="Notable interviews and credentials">
+  <div class="credibility__top">
+    <div class="container">
+      <div class="credibility__header reveal">
+        <p class="eyebrow eyebrow--gold">A Journalist Who Sat in Every Room</p>
+        <span class="credibility__years"><span data-count="17" data-suffix="+">17+</span> Years — Miami Herald</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="credibility__names">
+    <div class="credibility__name-row reveal">
+      <div class="credibility__row-top">
+        <span class="credibility__tag">Interviewed</span>
+        <span class="credibility__note">NBA Champion · Los Angeles Lakers</span>
+      </div>
+      <span class="credibility__name">Kobe Bryant</span>
+    </div>
+    <div class="credibility__name-row reveal">
+      <div class="credibility__row-top">
+        <span class="credibility__tag">Interviewed</span>
+        <span class="credibility__note">8× Olympic Gold Medalist · World Record Holder</span>
+      </div>
+      <span class="credibility__name">Usain Bolt</span>
+    </div>
+    <div class="credibility__name-row reveal">
+      <div class="credibility__row-top">
+        <span class="credibility__tag">Interviewed</span>
+        <span class="credibility__note">Granddaughter of Nelson Mandela</span>
+      </div>
+      <span class="credibility__name">Nandi Mandela</span>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="stats__grid">
-      <div class="stat-item reveal">
-        <span class="stat-item__num" data-count="17" data-suffix="+">17+</span>
-        <span class="stat-item__label">Years at Miami Herald</span>
-      </div>
-      <div class="stats__divider" aria-hidden="true"></div>
-      <div class="stat-item reveal">
-        <span class="stat-item__num">Kobe</span>
-        <span class="stat-item__label">Bryant — Interviewed</span>
-      </div>
-      <div class="stats__divider" aria-hidden="true"></div>
-      <div class="stat-item reveal">
-        <span class="stat-item__num">Usain</span>
-        <span class="stat-item__label">Bolt — Interviewed</span>
-      </div>
-      <div class="stats__divider" aria-hidden="true"></div>
-      <div class="stat-item reveal">
-        <span class="stat-item__num">Nandi</span>
-        <span class="stat-item__label">Mandela — Interviewed</span>
-      </div>
-      <div class="stats__divider" aria-hidden="true"></div>
-      <div class="stat-item reveal">
-        <span class="stat-item__num">Boutique</span>
-        <span class="stat-item__label">Selective Clientele</span>
-      </div>
+    <div class="credibility__footer reveal">
+      <p class="credibility__footer-text">
+        17 years inside one of America's most influential newsrooms taught Fabian one thing: the people who control their narrative, move differently in every room.
+      </p>
+      <a href="/about.html" class="btn-arrow">Read the Full Story →</a>
     </div>
   </div>
 </section>

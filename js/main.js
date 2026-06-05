@@ -124,12 +124,6 @@ const VSL_URL   = ''; // e.g. 'https://www.youtube.com/embed/dQw4w9WgXcQ?autopla
         el.dataset.modalBound = 'true';
       }
     });
-    // Float CTA button
-    const floatCTA = document.querySelector('.float-cta');
-    if (floatCTA && !floatCTA.dataset.modalBound) {
-      floatCTA.addEventListener('click', openModal);
-      floatCTA.dataset.modalBound = 'true';
-    }
   }
 
   // Close handlers
@@ -260,17 +254,6 @@ const VSL_URL   = ''; // e.g. 'https://www.youtube.com/embed/dQw4w9WgXcQ?autopla
       document.body.style.overflow = '';
     });
   });
-})();
-
-// ================================================================
-// FLOATING CTA
-// ================================================================
-(function initFloatCTA() {
-  const btn = document.querySelector('.float-cta');
-  if (!btn) return;
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 500);
-  }, { passive: true });
 })();
 
 // ================================================================
